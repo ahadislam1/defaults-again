@@ -14,6 +14,7 @@
 		0B7BC3F223B11018002560F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BC3F123B11018002560F2 /* Assets.xcassets */; };
 		0B7BC3F523B11018002560F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BC3F323B11018002560F2 /* LaunchScreen.storyboard */; };
 		0B7BC40023B11018002560F2 /* defaults_againTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BC3FF23B11018002560F2 /* defaults_againTests.swift */; };
+		0B7BC40B23B12305002560F2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BC40A23B12305002560F2 /* UserDefaultsWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0B7BC3FB23B11018002560F2 /* defaults-againTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "defaults-againTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7BC3FF23B11018002560F2 /* defaults_againTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaults_againTests.swift; sourceTree = "<group>"; };
 		0B7BC40123B11018002560F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7BC40A23B12305002560F2 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				0B7BC3EA23B11014002560F2 /* SceneDelegate.swift */,
 				0B7BC3EC23B11014002560F2 /* ViewController.swift */,
 				0B7BC3EE23B11014002560F2 /* Main.storyboard */,
+				0B7BC40A23B12305002560F2 /* UserDefaultsWrapper.swift */,
 				0B7BC3F123B11018002560F2 /* Assets.xcassets */,
 				0B7BC3F323B11018002560F2 /* LaunchScreen.storyboard */,
 				0B7BC3F623B11018002560F2 /* Info.plist */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7BC40B23B12305002560F2 /* UserDefaultsWrapper.swift in Sources */,
 				0B7BC3ED23B11014002560F2 /* ViewController.swift in Sources */,
 				0B7BC3E923B11014002560F2 /* AppDelegate.swift in Sources */,
 				0B7BC3EB23B11014002560F2 /* SceneDelegate.swift in Sources */,

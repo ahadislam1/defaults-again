@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet var allLabels: [UILabel]!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var iswitch: UISwitch!
+    
     
     var fontSize: Double = 10 {
         didSet {
             allLabels.forEach { $0.font = $0.font.withSize(CGFloat(fontSize)) }
+            UserDefaultsWrapper.manager.store(fontSize: fontSize)
         }
     }
     
@@ -28,17 +32,20 @@ class ViewController: UIViewController {
             case false:
                 allLabels.forEach { $0.text = $0.text?.lowercased() }
             }
+            UserDefaultsWrapper.manager.store(shouldUppercaseText: uppercaseText)
         }
     }
     
     var username = "" {
         didSet {
             welcomeLabel.text = "Welcome " + username + "!"
+            UserDefaultsWrapper.manager.store(username: username)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
+        setInitialValuesFromUserDefaults()
         
     }
 
@@ -48,6 +55,21 @@ class ViewController: UIViewController {
     
     @IBAction func updateUppercaseText(_ sender: UISwitch) {
         uppercaseText = sender.isOn
+    }
+    
+    private func setInitialValuesFromUserDefaults() {
+        if let storedUsername = UserDefaultsWrapper.manager.getUsername() {
+            username = storedUsername
+            textField.text = storedUsername
+        }
+        if let storedFontSize = UserDefaultsWrapper.manager.getFontSize() {
+            fontSize = storedFontSize
+            slider.value = Float(storedFontSize)
+        }
+        if let storedUppercaseText = UserDefaultsWrapper.manager.getShouldUppercaseText() {
+            uppercaseText = storedUppercaseText
+            iswitch.isOn = storedUppercaseText
+        }
     }
     
     
@@ -60,7 +82,6 @@ extension ViewController: UITextFieldDelegate {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             username = updatedText
         }
-        print(username)
         return true
     }
 }

@@ -96,6 +96,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="iswitch" destination="Eqw-M4-U59" id="CeR-Dd-iRc"/>
+                        <outlet property="slider" destination="8da-Lg-kit" id="L0h-o2-s8h"/>
                         <outlet property="textField" destination="x4V-aK-63K" id="IDr-3a-HoA"/>
                         <outlet property="welcomeLabel" destination="rte-QZ-aZz" id="I9q-iH-ClH"/>
                         <outletCollection property="allLabels" destination="pEf-Hs-Xrj" collectionClass="NSMutableArray" id="ytp-05-xqg"/>
