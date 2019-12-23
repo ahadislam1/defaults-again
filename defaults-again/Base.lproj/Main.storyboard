@@ -16,8 +16,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rte-QZ-aZz">
-                                <rect key="frame" x="0.0" y="52" width="414" height="64.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <rect key="frame" x="0.0" y="52" width="414" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,17 +30,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Y3v-nQ-7Pg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3v-nQ-7Pg">
                                         <rect key="frame" x="0.0" y="36.5" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEf-Hs-Xrj">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8da-Lg-kit">
-                                                <rect key="frame" x="185" y="0.0" width="191" height="31"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="15" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="8da-Lg-kit">
+                                                <rect key="frame" x="78" y="0.0" width="298" height="31"/>
+                                                <connections>
+                                                    <action selector="updateFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="U97-86-EJy"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -55,6 +58,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-M4-U59">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="updateUppercaseText:" destination="BYZ-38-t0r" eventType="valueChanged" id="iRR-hc-yL8"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -89,6 +95,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="x4V-aK-63K" id="IDr-3a-HoA"/>
+                        <outlet property="welcomeLabel" destination="rte-QZ-aZz" id="I9q-iH-ClH"/>
+                        <outletCollection property="allLabels" destination="pEf-Hs-Xrj" collectionClass="NSMutableArray" id="ytp-05-xqg"/>
+                        <outletCollection property="allLabels" destination="ZuJ-6k-488" collectionClass="NSMutableArray" id="hD3-Gf-sT5"/>
+                        <outletCollection property="allLabels" destination="w93-Y9-ppY" collectionClass="NSMutableArray" id="UlY-Ty-XIA"/>
+                        <outletCollection property="allLabels" destination="oIM-Hg-lFT" collectionClass="NSMutableArray" id="3bV-28-in7"/>
+                        <outletCollection property="allLabels" destination="rte-QZ-aZz" collectionClass="NSMutableArray" id="LWJ-fe-GlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
